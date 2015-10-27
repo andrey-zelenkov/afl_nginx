@@ -45,7 +45,9 @@ ngx_conf_test_add_quit_event(ngx_cycle_t *cycle)
    ev.data = &dumb;
    dumb.fd = (ngx_socket_t) -1;
 
-   ngx_add_timer(&ev, 1);
+   ngx_add_timer(&ev, 0);
+
+   ngx_post_event(&ev, &ngx_posted_events);
 
    return NGX_OK;
 }
