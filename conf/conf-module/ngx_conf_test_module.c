@@ -11,26 +11,18 @@ static ngx_int_t ngx_conf_test_add_quit_event(ngx_cycle_t *cycle);
 static void ngx_set_ngx_quit();
 
 
-static ngx_http_module_t  ngx_conf_test_module_ctx = {
-    NULL,                          /* preconfiguration */
-    NULL,                          /* postconfiguration */
-
-    NULL,                          /* create main configuration */
-    NULL,                          /* init main configuration */
-
-    NULL,                          /* create server configuration */
-    NULL,                          /* merge server configuration */
-
-    NULL,                          /* create location configuration */
-    NULL                           /* merge location configuration */
+static ngx_core_module_t  ngx_regex_module_ctx = {
+    ngx_string("conf_test"),
+    NULL,
+    NULL
 };
 
 
 ngx_module_t  ngx_conf_test_module = {
     NGX_MODULE_V1,
-    &ngx_conf_test_module_ctx,     /* module context */
+    &ngx_regex_module_ctx,         /* module context */
     NULL,                          /* module directives */
-    NGX_HTTP_MODULE,               /* module type */
+    NGX_CORE_MODULE,               /* module type */
     NULL,                          /* init master */
     NULL,                          /* init module */
     ngx_conf_test_add_quit_event,  /* init process */
