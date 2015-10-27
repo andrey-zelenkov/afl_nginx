@@ -11,10 +11,6 @@ static ngx_int_t ngx_conf_test_send_quit_event(ngx_cycle_t *cycle);
 static void ngx_set_ngx_quit();
 
 
-static ngx_event_t           ev;
-static ngx_connection_t      dumb;
-
-
 static ngx_http_module_t  ngx_conf_test_module_ctx = {
     NULL,                          /* preconfiguration */
     NULL,                          /* postconfiguration */
@@ -49,6 +45,9 @@ ngx_module_t  ngx_conf_test_module = {
 static ngx_int_t
 ngx_conf_test_send_quit_event(ngx_cycle_t *cycle)
 {
+   static ngx_event_t           ev;
+   static ngx_connection_t      dumb;
+
    ev.handler = ngx_set_ngx_quit;
    ev.log = cycle->log;
    ev.data = &dumb;
