@@ -7,7 +7,7 @@
 #include <ngx_http.h>
 
 
-static ngx_int_t ngx_conf_test_send_quit_event(ngx_cycle_t *cycle);
+static ngx_int_t ngx_conf_test_add_quit_event(ngx_cycle_t *cycle);
 static void ngx_set_ngx_quit();
 
 
@@ -33,7 +33,7 @@ ngx_module_t  ngx_conf_test_module = {
     NGX_HTTP_MODULE,               /* module type */
     NULL,                          /* init master */
     NULL,                          /* init module */
-    ngx_conf_test_send_quit_event, /* init process */
+    ngx_conf_test_add_quit_event,  /* init process */
     NULL,                          /* init thread */
     NULL,                          /* exit thread */
     NULL,                          /* exit process */
@@ -43,7 +43,7 @@ ngx_module_t  ngx_conf_test_module = {
 
 
 static ngx_int_t
-ngx_conf_test_send_quit_event(ngx_cycle_t *cycle)
+ngx_conf_test_add_quit_event(ngx_cycle_t *cycle)
 {
    static ngx_event_t           ev;
    static ngx_connection_t      dumb;
