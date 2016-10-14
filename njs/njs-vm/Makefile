@@ -11,5 +11,5 @@ njs-vm: $(PARSEROBJS)
 	$(CC) $(CFLAGS) -L${NJS}/build \
 $(PARSEROBJS) -o $@ -lnxt -lnjs -lm $(NXT_PCRE_CFLAGS) $(NXT_PCRE_LIB)
 
-clean: 
+clean:
 	rm njs-vm.o
