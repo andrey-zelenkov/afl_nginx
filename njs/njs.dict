@@ -136,7 +136,7 @@ keyword_sha256="sha256"
 keyword_hex="hex"
 keyword_base64="base64"
 keyword_njs="njs"
-keyword_detele="detele"
+keyword_delete="delete"
 
 prop_name="name"
 
