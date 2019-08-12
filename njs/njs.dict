@@ -142,6 +142,12 @@ keyword_delete="delete"
 
 prop_name="name"
 
+method_enumerable=".enumerable"
+method_configurable=".configurable"
+method_writable=".writable"
+method_value=".value"
+method_get=".get"
+method_set=".set"
 method_keys=".keys"
 method_entries=".entries"
 method_values=".values"
