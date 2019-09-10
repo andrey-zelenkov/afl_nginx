@@ -114,6 +114,7 @@ prop_slice=".slice"
 prop_toCode=".toCode"
 prop_toString=".toString"
 prop_valueOf=".valueOf"
+prop_toFixed=".toFixed"
 
 
 keyword_req="req"
